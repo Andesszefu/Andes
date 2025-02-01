@@ -1,9 +1,2 @@
-FROM python:3.10
-
-WORKDIR /app
-
-COPY . .  # Kopiuje wszystkie pliki do kontenera
-
-RUN pip install --no-cache-dir -r requirements.txt  # Instalacja zależności
-
-CMD ["python", "bot.py"]
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
