@@ -1,1 +1,1 @@
-RUN apt-get update && apt-get install -y gcc python3-dev
+FROM python:3.10
