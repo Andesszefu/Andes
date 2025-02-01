@@ -1,0 +1,9 @@
+from telegram.ext import ApplicationBuilder
+
+def main():
+    app = ApplicationBuilder().token(TOKEN).build()
+    
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(MessageHandler(Filters.forwarded, check_forward))
+    
+    app.run_polling()
