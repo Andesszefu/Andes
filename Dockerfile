@@ -2,9 +2,12 @@ FROM python:3.10
 
 WORKDIR /app
 
-COPY requirements.txt .  # Najpierw kopiujemy plik zależności
+# Skopiuj pliki wymagane do działania
+COPY bot.py .
+COPY requirements.txt .
+
+# Zainstaluj zależności
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .  # Dopiero potem kopiujemy resztę plików
-
+# Uruchom bota
 CMD ["python", "bot.py"]
